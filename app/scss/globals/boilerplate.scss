@@ -1,3 +1,5 @@
+@use '../util' as *;
+
 html {
     font-size: 100%;
 }
@@ -9,4 +11,33 @@ html {
 }
 
 body {
+    font-family: var(--font-primary);
+    @include flex(center);
+    min-height: 100vh;
+    font-size: 14px;
+
+    background: url(../images/bg-mobile.png) no-repeat;
+    background-size: cover;
+
+    @include breakpoint(medium) {
+        background: #0c122c url('../images/bg-desktop.png') no-repeat;
+        background-position: bottom;
+        background-size: contain;
+    }
+}
+
+.cover {
+    background-color: var(--color-bg-cover);
+    border-radius: rem(8);
+    padding: rem(40);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+
+    @include breakpoint-down(small) {
+        padding: rem(30);
+    }
+}
+
+.bold {
+    color: var(--color-text-bold);
+    font-weight: 700;
 }

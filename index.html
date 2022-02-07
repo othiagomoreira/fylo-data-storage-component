@@ -13,24 +13,55 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Box Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <!-- Css -->
-  <link rel="stylesheet" href="dist/style.css">
+  <link rel="stylesheet" href="./dist/style.css">
 
   <!-- Javascript -->
-  <script defer src="dist/script.js"></script>
+  <script defer src="./dist/script.js"></script>
 
   <title>Frontend Mentor | Fylo data storage component</title>
 </head>
 
 <body>
+  <main class="container">
+    <section class="cover cover-left animate__animated animate__fadeInLeft">
+      <img src="images/logo.svg" alt="Fylo Logo" class="cover-left__logo">
 
-  You’ve used 815 GB of your storage
+      <div class="cover-left__files">
+        <i class='bx bxs-file-blank cover-left__icon'></i>
+        <i class='bx bxs-folder cover-left__icon'></i>
+        <i class='bx bxs-cloud-upload cover-left__icon'></i>
+      </div>
+    </section>
 
-  185 GB Left
+    <section class="cover cover-right">
+      <div class="cover-right__pop-up" id="pop-up">
+        <div class="cover-right__gigabyte animate__animated animate__shakeY">
+          185 <span>GB Left</span>
+        </div>
+      </div>
 
-  0 GB
-  1000 GB
+      <p class="cover-right__title">
+        You’ve used <span class="bold">815 GB</span> of your storage
+      </p>
 
+      <div class="cover-right__bar">
+        <div class="cover-right__progress"></div>
+      </div>
+
+      <div class="cover-right__storage">
+        <span class="bold cover-right__number">0 GB</span>
+        <span class="bold cover-right__number">1000 GB</span>
+      </div>
+
+    </section>
+  </main>
 </body>
 
 </html>

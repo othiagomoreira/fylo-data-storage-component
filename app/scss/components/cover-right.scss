@@ -1,0 +1,111 @@
+@use '../util' as *;
+
+.cover-right {
+    position: relative;
+    margin-top: rem(16);
+    flex: 1;
+    align-self: flex-end;
+
+    &__title {
+        text-align: center;
+        color: var(--color-text);
+
+        @include breakpoint(medium) {
+            text-align: initial;
+        }
+    }
+
+    &__bar {
+        position: relative;
+        height: rem(20);
+        background-color: hsl(229, 54%, 18%);
+        border: 3px solid transparent;
+        border-radius: rem(30);
+        margin: rem(16) 0;
+    }
+
+    &__progress {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 75%;
+
+        background: linear-gradient(to right, var(--color-bar));
+        border-radius: rem(30);
+
+        &::before {
+            content: '';
+            display: block;
+
+            position: absolute;
+            top: rem(2);
+            bottom: rem(2);
+            right: rem(3);
+            width: rem(10);
+
+            background-color: var(--color-text-bold);
+            border-radius: 100%;
+        }
+    }
+
+    &__storage {
+        @include flex(space-between);
+        margin-bottom: rem(10);
+
+        @include breakpoint(medium) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__pop-up {
+        @include flex(center);
+        gap: rem(8);
+        background-color: #fff;
+        border-radius: rem(8);
+        height: rem(65);
+        width: rem(160);
+
+        position: absolute;
+        bottom: -40%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        cursor: pointer;
+
+        @include breakpoint(medium) {
+            transform: initial;
+            top: rem(-40);
+            right: rem(37);
+            border-bottom-right-radius: 0;
+
+            &::before {
+                content: '';
+                display: block;
+                background-color: #fff;
+                width: 30px;
+                height: 30px;
+
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                transform: translateY(70%);
+
+                // Speech bubble effect
+                -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+                clip-path: polygon(100% 0, 0 0, 100% 100%);
+            }
+        }
+    }
+
+    &__gigabyte {
+        font-size: rem(40);
+        font-weight: 700;
+
+        & > span {
+            display: inline-block;
+            font-size: rem(12);
+            color: var(--color-text);
+            text-transform: uppercase;
+            transform: translateY(-5px);
+        }
+    }
+}
