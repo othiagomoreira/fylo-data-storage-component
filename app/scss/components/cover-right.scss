@@ -8,7 +8,9 @@
 
     &__title {
         text-align: center;
-        color: var(--color-text);
+        font-weight: normal;
+        font-size: inherit;
+        color: var(--color-text-bold);
 
         @include breakpoint(medium) {
             text-align: initial;
